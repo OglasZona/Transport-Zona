@@ -1,201 +1,181 @@
-/* Reset osnovnih margina i paddinga */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Telo sajta */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
 }
 
-/* Navigacija */
-header {
-    background-color: black;
-    padding: 15px 0;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: white;
+a {
     text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: inherit;
 }
 
-nav ul li a:hover {
-    color: red;
-}
-
-/* Sekcija sa slikom */
-.hero {
-    width: 100%;
-    height: 400px;
-    background-image: url('kamion-zona.jpg');
+header {
+    background-image: url('https://example.com/hero-image.jpg'); /* Dodaj svoju sliku */
     background-size: cover;
-    background-position: center;
+    height: 500px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Glavni sadržaj */
+.hero h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.cta-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
 .content {
     padding: 40px;
     text-align: center;
+    background-color: #fff;
 }
 
 .content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons .icon {
     color: black;
-    font-size: 32px;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    color: red;
+}
+
+/* Kontakt forma */
+.contact-form {
+    padding: 40px;
+    background-color: #f5f5f5;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
-.content p {
-    font-size: 18px;
-    color: #333;
+.contact-form label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 20px;
-    line-height: 1.6;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-/* Sekcija za Transport Zona */
-.transport-zona {
-    background-color: #f4f4f4;
-    padding: 50px 0;
-}
-
-.transport-zona h2 {
-    font-size: 28px;
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.transport-zona p {
-    font-size: 18px;
-    text-align: center;
-    color: #555;
-}
-
-.transport-zona .service-box {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.transport-zona .service-box div {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-    min-width: 250px;
-}
-
-.transport-zona .service-box div h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.transport-zona .service-box div p {
-    font-size: 16px;
-    color: #777;
-}
-
-/* Sekcija za Test Zona */
-.test-zona {
-    background-color: #e0e0e0;
-    padding: 50px 0;
-}
-
-.test-zona h2 {
-    font-size: 28px;
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-.test-zona p {
-    font-size: 18px;
-    text-align: center;
-    color: #555;
-}
-
-.test-zona .test-box {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.test-zona .test-box div {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    flex: 1;
-    min-width: 250px;
-}
-
-.test-zona .test-box div h3 {
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.test-zona .test-box div p {
-    font-size: 16px;
-    color: #777;
-}
-
-/* Footer */
-footer {
+.contact-form button {
     background-color: black;
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-footer p {
-    font-size: 14px;
+.contact-form button:hover {
+    background-color: red;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-close {
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Scroll Animation */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-animate {
+    opacity: 0;
+    animation: slideUp 1s forwards;
+    animation-delay: 0.3s;
 }
 
 /* Responsivnost */
-@media (max-width: 768px) {
-    .transport-zona .service-box,
-    .test-zona .test-box {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .hero {
+@media only screen and (max-width: 768px) {
+    header {
         height: 300px;
+        background-position: center;
     }
 
-    .content {
-        padding: 20px;
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .content h1 {
+        font-size: 24px;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 90%;
     }
 }
