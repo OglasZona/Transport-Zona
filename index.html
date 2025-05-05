@@ -1,58 +1,99 @@
+<!-- 
+  Svi resursi (kamion-zona.jpg, logo.jpg) treba da se nalaze u istoj fascikli.
+-->
 <!DOCTYPE html>
 <html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Transport Zona</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Transport Zona - Pouzdani logistički partner</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Logo -->
+    <!-- Navigacija -->
     <header>
-        <div id="logo-container">
-            <img src="logo.jpg" alt="Transport Zona Logo" id="logo">
-        </div>
+        <nav class="navbar">
+            <a href="#hero" class="logo"><img src="logo.jpg" alt="Logo"></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Početna</a></li>
+                <li><a href="#about">O nama</a></li>
+                <li><a href="#services">Usluge</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="https://forms.gle/8Lxhfjpkg2LDLS1S8" target="_blank" class="btn btn-primary">Prijava vozača</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Sekcija -->
-    <section id="hero">
-        <h1>Dobrodošli u Transport Zonę</h1>
-        <p>Vaš partner za sve usluge transporta i logistike</p>
-        <a href="#usluge" class="btn">Naše usluge</a>
+    <!-- Hero sekcija -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Transport Zona – Vaš pouzdan partner u transportu</h1>
+            <p>Brza i sigurna logistička rešenja za vaše poslovanje</p>
+            <a href="#services" class="btn btn-primary">Naše usluge</a>
+        </div>
     </section>
 
-    <!-- O nama Sekcija -->
-    <section id="o-nama" class="section-content">
+    <!-- Sekcija "O nama" -->
+    <section id="about" class="about section">
         <h2>O nama</h2>
-        <p>Transport Zona je lider u industriji transporta i logistike sa više od 10 godina iskustva. Pružamo brza i efikasna rešenja za sve vaše transportne potrebe.</p>
+        <p>Transport Zona je lider u logističkim rešenjima, sa višegodišnjim iskustvom u špediciji i transportu robe. Naš tim stručnjaka pruža usluge visokog kvaliteta, koristeći najsavremenije tehnologije praćenja isporuka i optimizacije ruta. Posvećeni smo tačnim rokovima i bezbednosti tereta, a naša flota modernih vozila i saradnja sa proverеним partnerskim firmama garantuje da vaša roba stigne brzo i neoštećeno na cilj.</p>
+        <p>Razvijamo inovativna rešenja u skladišnoj logistici i distribuciji, sa ciljem da proces transporta bude što efikasniji i ekološki prihvatljiviji. U Transport Zoni verujemo u transparentnu komunikaciju sa klijentima i fleksibilnost u prilagođavanju usluga njihovim specifičnim potrebama. Naš uspeh je zasnovan na poverenju i dugoročnim poslovnim odnosima sa našim klijentima širom regiona i šire.</p>
     </section>
 
-    <!-- Usluge Sekcija -->
-    <section id="usluge" class="section-content">
-        <h2>Naše usluge</h2>
-        <ul>
-            <li>Brzi transport na nacionalnom nivou</li>
-            <li>Logistička rešenja za sve vrste robe</li>
-            <li>Fleksibilne cene i pouzdana dostava</li>
-        </ul>
+    <!-- Sekcija "Usluge" -->
+    <section id="services" class="services section">
+        <h2>Usluge</h2>
+        <div class="services-cards">
+            <div class="service-card">
+                <i class="fas fa-truck"></i>
+                <h3>Nacionalni transport</h3>
+                <p>Pouzdan drumski transport robe unutar zemlje, sa modernom flotom kamiona i unapređenom infrastrukturom.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Međunarodni transport</h3>
+                <p>Logistika i transport robe na međunarodnim relacijama, sa brzom carinskom podrškom i praćenjem isporuka u realnom vremenu.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-plane"></i>
+                <h3>Avio transport</h3>
+                <p>Brza avio dostava robe za hitne pošiljke, sarađujemo sa vodećim avio kompanijama za siguran i pouzdan prevoz.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-boxes"></i>
+                <h3>Magacinska logistika</h3>
+                <p>Usluge skladištenja i distribucije sa modernim skladišnim prostorima, upravljanje zalihama i konsolidacija tereta.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Kontakt Sekcija -->
-    <section id="kontakt" class="section-content">
+    <!-- Sekcija "Kontakt" -->
+    <section id="contact" class="contact section">
         <h2>Kontakt</h2>
-        <p>Kontaktirajte nas putem telefona ili e-maila kako biste započeli saradnju.</p>
-        <ul>
-            <li><strong>Telefon:</strong> +381 11 1234567</li>
-            <li><strong>Email:</strong> kontakt@transportzona.com</li>
-        </ul>
+        <div class="contact-details">
+            <p><i class="fas fa-phone-alt"></i> 060 5060 025</p>
+            <p><i class="fas fa-phone-alt"></i> 060 4753 169</p>
+            <p><i class="fas fa-envelope"></i> transportzona@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Beograd, Srbija</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Belgrade,Serbia&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
     </section>
 
-    <!-- Dugme za Povratak na Vrh -->
-    <button id="scrollToTopBtn" class="scroll-to-top">
-        ↑
-    </button>
+    <!-- Dugme za skrolovanje na vrh -->
+    <button id="toTop" title="Na vrh"><i class="fas fa-chevron-up"></i></button>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
