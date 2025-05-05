@@ -1,33 +1,15 @@
-// Smooth scroll za linkove u meniju
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
+// Provera kada korisnik skroluje do sekcija
+window.addEventListener('scroll', function () {
+  const sections = document.querySelectorAll('section');
+  sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      const sectionBottom = section.getBoundingClientRect().bottom;
+      const sectionHeight = section.offsetHeight;
+
+      if (sectionTop <= window.innerHeight * 0.8 && sectionBottom >= 0) {
+          section.classList.add('fade-in');
+      } else {
+          section.classList.remove('fade-in');
       }
-    });
   });
-  
-  // Fade-in efekat dok skroluješ
-  const faders = document.querySelectorAll('.fade-in');
-  
-  const appearOptions = {
-    threshold: 0.3,
-    rootMargin: "0px 0px -100px 0px"
-  };
-  
-  const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('appear');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  
-  faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-  });
-  
+});

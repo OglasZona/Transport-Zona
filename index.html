@@ -1,80 +1,68 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transport Zona</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Zona</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigacija -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Transport Zona</div>
-      <section id="usluge" class="fade-in">
+
+    <!-- Navigacija -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Početna</a></li>
+                <li><a href="#about">O nama</a></li>
+                <li><a href="#services">Usluge</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero sekcija -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Dobrodošli u Transport Zonę</h1>
+            <p>Vaš partner za brzu i sigurnu logistiku.</p>
+            <a href="#contact" class="btn">Kontaktirajte nas</a>
+        </div>
+    </section>
+
+    <!-- O nama -->
+    <section id="about">
+        <h2>O nama</h2>
+        <p>Transport Zona je kompanija koja se bavi pružanjem logističkih rešenja za sve vrste transporta. Naša misija je da obezbedimo siguran, brz i efikasan transport vaših tereta.</p>
+    </section>
+
+    <!-- Usluge -->
+    <section id="services">
         <h2>Naše usluge</h2>
-        <p>Prevoz skele, šleperski transport, selidbe i još mnogo toga.</p>
-      </section>
-      
-      <ul class="nav-links">
-        <li><a href="#hero">Početna</a></li>
-        <li><a href="#about">O nama</a></li>
-        <li><a href="#services">Usluge</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
+        <div class="service">
+            <h3>Brz transport</h3>
+            <p>Pružamo brzo i sigurno transportno rešenje za sve vrste tereta, bilo da je u pitanju lokalna ili međunarodna dostava.</p>
+        </div>
+        <div class="service">
+            <h3>Logistička podrška</h3>
+            <p>Naša logistička ekipa nudi pomoć u organizaciji prevoza, skladištenju i distribuciji proizvoda.</p>
+        </div>
+        <div class="service">
+            <h3>Prilagodljivi vozni park</h3>
+            <p>Imamo flotu različitih vozila, od kamiona do manjih dostavnih vozila, koja su prilagodljiva svim vašim potrebama.</p>
+        </div>
+    </section>
 
-  <!-- Hero Sekcija -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Brza i pouzdana usluga prevoza i najma skele širom Srbije</h1>
-      <a href="#contact" class="cta-button">Kontaktirajte nas</a>
-    </div>
-  </section>
+    <!-- Kontakt -->
+    <section id="contact">
+        <h2>Kontaktirajte nas</h2>
+        <p>Za više informacija, možete nas kontaktirati putem emaila: <a href="mailto:info@transportzona.com">info@transportzona.com</a></p>
+    </section>
 
-  <!-- O nama -->
-  <section id="about">
-    <h2>O nama</h2>
-    <p>Transport Zona je lider u organizaciji transporta i najmu skele u Srbiji. Sa iskusnim timom i pouzdanim partnerima, garantujemo bezbedan i efikasan prevoz opreme i građevinskih materijala širom zemlje.</p>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Transport Zona - Sva prava zadržana</p>
+    </footer>
 
-  <!-- Usluge -->
-  <section id="services">
-    <h2>Naše usluge</h2>
-    <div class="service-grid">
-      <div class="service">
-        <h3>Transport građevinskog materijala</h3>
-        <p>Efikasan i brz prevoz po celoj Srbiji.</p>
-      </div>
-      <div class="service">
-        <h3>Najam skele</h3>
-        <p>Povoljno i profesionalno iznajmljivanje skele uz montažu.</p>
-      </div>
-      <div class="service">
-        <h3>Logistička podrška</h3>
-        <p>Planiranje, koordinacija i realizacija složenih građevinskih zahvata.</p>
-      </div>
-    </div>
     <script src="script.js"></script>
-
-  </section>
-
-  <!-- Kontakt -->
-  <section id="contact">
-    <h2>Kontaktirajte nas</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Vaše ime" required>
-      <input type="email" placeholder="Email adresa" required>
-      <textarea placeholder="Poruka" required></textarea>
-      <button type="submit">Pošalji poruku</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Transport Zona. Sva prava zadržana.</p>
-  </footer>
 </body>
 </html>
