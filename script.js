@@ -1,15 +1,16 @@
-// Provera kada korisnik skroluje do sekcija
-window.addEventListener('scroll', function () {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const sectionBottom = section.getBoundingClientRect().bottom;
-        const sectionHeight = section.offsetHeight;
+// Dugme za povratak na vrh
+let scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
-        if (sectionTop <= window.innerHeight * 0.8 && sectionBottom >= 0) {
-            section.classList.add('fade-in');
-        } else {
-            section.classList.remove('fade-in');
-        }
-    });
+// Funkcija koja pokazuje dugme kada korisnik skroluje dole
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block"; // Prikazivanje dugmeta
+    } else {
+        scrollToTopBtn.style.display = "none"; // Sakrivanje dugmeta
+    }
+};
+
+// Funkcija za vraćanje na vrh stranice
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Glađi prelaz pri skrolovanju na vrh
 });

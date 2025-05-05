@@ -3,65 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transport Zona</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Navigacija -->
+    <!-- Logo -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Početna</a></li>
-                <li><a href="#about">O nama</a></li>
-                <li><a href="#services">Usluge</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
+        <div id="logo-container">
+            <img src="logo.jpg" alt="Transport Zona Logo" id="logo">
+        </div>
     </header>
 
-    <!-- Hero sekcija -->
+    <!-- Hero Sekcija -->
     <section id="hero">
-        <div class="hero-content">
-            <h1>Dobrodošli u Transport Zonę</h1>
-            <p>Vaš partner za brzu i sigurnu logistiku.</p>
-            <a href="#contact" class="btn">Kontaktirajte nas</a>
-        </div>
+        <h1>Dobrodošli u Transport Zonę</h1>
+        <p>Vaš partner za sve usluge transporta i logistike</p>
+        <a href="#usluge" class="btn">Naše usluge</a>
     </section>
 
-    <!-- O nama -->
-    <section id="about">
+    <!-- O nama Sekcija -->
+    <section id="o-nama" class="section-content">
         <h2>O nama</h2>
-        <p>Transport Zona je kompanija koja se bavi pružanjem logističkih rešenja za sve vrste transporta. Naša misija je da obezbedimo siguran, brz i efikasan transport vaših tereta.</p>
+        <p>Transport Zona je lider u industriji transporta i logistike sa više od 10 godina iskustva. Pružamo brza i efikasna rešenja za sve vaše transportne potrebe.</p>
     </section>
 
-    <!-- Usluge -->
-    <section id="services">
+    <!-- Usluge Sekcija -->
+    <section id="usluge" class="section-content">
         <h2>Naše usluge</h2>
-        <div class="service">
-            <h3>Brz transport</h3>
-            <p>Pružamo brzo i sigurno transportno rešenje za sve vrste tereta, bilo da je u pitanju lokalna ili međunarodna dostava.</p>
-        </div>
-        <div class="service">
-            <h3>Logistička podrška</h3>
-            <p>Naša logistička ekipa nudi pomoć u organizaciji prevoza, skladištenju i distribuciji proizvoda.</p>
-        </div>
-        <div class="service">
-            <h3>Prilagodljivi vozni park</h3>
-            <p>Imamo flotu različitih vozila, od kamiona do manjih dostavnih vozila, koja su prilagodljiva svim vašim potrebama.</p>
-        </div>
+        <ul>
+            <li>Brzi transport na nacionalnom nivou</li>
+            <li>Logistička rešenja za sve vrste robe</li>
+            <li>Fleksibilne cene i pouzdana dostava</li>
+        </ul>
     </section>
 
-    <!-- Kontakt -->
-    <section id="contact">
-        <h2>Kontaktirajte nas</h2>
-        <p>Za više informacija, možete nas kontaktirati putem emaila: <a href="mailto:info@transportzona.com">info@transportzona.com</a></p>
+    <!-- Kontakt Sekcija -->
+    <section id="kontakt" class="section-content">
+        <h2>Kontakt</h2>
+        <p>Kontaktirajte nas putem telefona ili e-maila kako biste započeli saradnju.</p>
+        <ul>
+            <li><strong>Telefon:</strong> +381 11 1234567</li>
+            <li><strong>Email:</strong> kontakt@transportzona.com</li>
+        </ul>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Transport Zona - Sva prava zadržana</p>
-    </footer>
+    <!-- Dugme za Povratak na Vrh -->
+    <button id="scrollToTopBtn" class="scroll-to-top">
+        ↑
+    </button>
 
     <script src="script.js"></script>
 </body>

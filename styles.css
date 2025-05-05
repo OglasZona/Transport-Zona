@@ -1,174 +1,147 @@
-/* Reset osnovnih stilova */
+/* Opšti stilovi */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Globalni stilovi */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
     color: #333;
+    background-color: #f4f4f4;
 }
 
-/* Navigacija */
-header {
-    background-color: #333;
-    padding: 20px;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #ff9800;
-    border-radius: 5px;
-}
-
-/* Hero sekcija */
+/* Hero Sekcija */
 #hero {
-    background-image: url('kamion-zona.jpg'); /* Proverite da li je putanja ta */
+    background-image: url('kamion-zona.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
     text-align: center;
-    color: #fff;
-}
-
-#hero .hero-content {
-    max-width: 600px;
+    padding: 120px 20px;
+    position: relative;
 }
 
 #hero h1 {
-    font-size: 3rem;
+    font-size: 4em;
     margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
 }
 
 #hero p {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin-bottom: 30px;
+    animation: fadeIn 3s ease-out;
 }
 
 #hero .btn {
-    background-color: #ff9800;
-    color: #fff;
-    padding: 15px 30px;
-    font-size: 18px;
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2em;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 #hero .btn:hover {
-    background-color: #e68900;
+    background-color: #555;
 }
 
-/* O nama */
-#about {
-    padding: 50px;
-    background-color: #fff;
+/* Animacija za fadeIn efekat */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+#logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#logo {
+    width: 120px;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#logo:hover {
+    opacity: 1;
+}
+
+/* Sekcije */
+.section-content {
+    padding: 60px 20px;
     text-align: center;
+    background-color: white;
+    margin-top: 20px;
 }
 
-#about h2 {
-    font-size: 2.5rem;
+h2 {
+    font-size: 2.5em;
     margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
 }
 
-#about p {
-    font-size: 1.2rem;
+ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
     color: #666;
 }
 
-/* Usluge */
-#services {
-    background-color: #f4f4f4;
-    padding: 50px;
-    text-align: center;
-}
-
-#services h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.service {
-    background-color: #fff;
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.service:hover {
-    transform: translateY(-10px);
-}
-
-#services .service h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-#services .service p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* Kontakt */
-#contact {
-    padding: 50px;
-    background-color: #fff;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-#contact p {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-#contact a {
-    color: #ff9800;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
+/* Dugme za povratak na vrh */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 20px;
+    display: none; /* Skriva dugme na početku */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-footer p {
-    font-size: 1rem;
+.scroll-to-top:hover {
+    background-color: #555;
+}
+
+/* Media Queries za responzivnost */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1.2em;
+    }
+
+    .section-content {
+        padding: 40px 20px;
+    }
+
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+    }
 }
