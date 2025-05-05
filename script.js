@@ -1,63 +1,64 @@
-// JavaScript za Transport Zona sajt
-document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer za animacije na skrolu
-    const faders = document.querySelectorAll('.fade-in');
-    const sliders = document.querySelectorAll('.slide-up');
+// Navigacija za mobilne uređaje
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
 
-    const appearOptions = {
-        threshold: 0.3,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
-
-    sliders.forEach(slider => {
-        appearOnScroll.observe(slider);
-    });
-
-    // 'Scroll to top' dugme
-    const scrollToTopBtn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.style.display = 'block';
-        } else {
-            scrollToTopBtn.style.display = 'none';
-        }
-    });
-
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Mobile meni toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.nav-list');
-    menuToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
-    });
-
-    // Smooth scroll za navigacione linkove
-    const links = document.querySelectorAll('.nav-list a[href^="#"]');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId.length > 1) {
-                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-            }
-            // zatvori mobilni meni posle klika
-            navList.classList.remove('active');
-        });
-    });
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
 });
+
+// Scroll to top dugme
+const scrollToTopBtn = document.createElement('button');
+scrollToTopBtn.classList.add('scroll-to-top');
+scrollToTopBtn.innerHTML = '↑';
+document.body.appendChild(scrollToTopBtn);
+
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
+
+// Sekcija animacija (parallax efekat na sekcije kad se skroluje)
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY + window.innerHeight;
+
+  sections.forEach(section => {
+    if (section.offsetTop < scrollPosition - 200) {
+      section.classList.add('visible');
+    }
+  });
+});
+
+// Aktivacija animacija kada sekcija dođe u ekran
+document.addEventListener('DOMContentLoaded', () => {
+  sections.forEach(section => {
+    section.classList.add('hidden');
+  });
+});
+
+// Mapa - Dodaj mapu sa SVG slikom
+const mapSection = document.getElementById('map-section');
+
+if (mapSection) {
+  const mapImage = document.createElement('img');
+  mapImage.src = 'mapa.svg';
+  mapImage.alt = 'Mapa Transport Zona';
+  mapSection.appendChild(mapImage);
+}
+
+// Pomoćna funkcija za skrolovanje do sekcije
+function scrollToSection(id) {
+  const targetSection = document.getElementById(id);
+  window.scrollTo({
+    top: targetSection.offsetTop - 50,
+    behavior: 'smooth'
+  });
+}
