@@ -1,79 +1,71 @@
 <!DOCTYPE html>
 <html lang="sr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Transport Zona - Profesionalne usluge prevoza robe, selidbi, šlep službe, i SOS pomoći širom Srbije i Evrope." />
-  <meta name="keywords" content="transport, selidbe, šlep služba, prevoz, Srbija, SOS pomoć, automehaničari, vulkanizeri, prevoz robe, Beograd" />
-  <meta name="author" content="Transport Zona Team" />
-  <title>Transport Zona | Sve na jednom mestu</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-  <link rel="icon" href="logo.jpg" type="image/jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transport Zona - Profesionalne usluge transporta sa interaktivnim mapama i brzim uslovima.">
+    <meta name="keywords" content="transport, logistika, beograd, mapa, interaktivna mapa, brza dostava, transportne usluge">
+    <meta name="author" content="Vladimir Stojadinović">
+    <title>Transport Zona</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-
 <body>
-  <header class="navbar">
-    <img src="logo.jpg" alt="Transport Zona Logo" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="#hero">Početna</a></li>
-        <li><a href="#usluge">Usluge</a></li>
-        <li><a href="#mapa">Naša Mreža</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header sa navigacijom -->
+    <header>
+        <div class="logo">
+            <h1>Transport Zona</h1>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Početna</a></li>
+                <li><a href="#services">Usluge</a></li>
+                <li><a href="#about">O Nama</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>Transport Zona</h1>
-      <p>Vaš partner za transport, šlep, selidbe i još mnogo više</p>
-      <a href="https://forms.gle/8Lxhfjpkg2LDLS1S8" class="btn">Zakaži uslugu</a>
-    </div>
-  </section>
+    <!-- Hero sekcija -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Brzi transport i logistika sa mapama</h2>
+            <p>Brza i sigurna dostava širom Beograda i Srbije.</p>
+        </div>
+    </section>
 
-  <section id="usluge" class="section-content">
-    <h2>Naše Usluge</h2>
-    <ul>
-      <li>Prevoz robe i selidbe po Srbiji i Evropi</li>
-      <li>Šlep služba 0-24h</li>
-      <li>Mobilni mehaničari, auto električari, vulkanizeri</li>
-      <li>Pristup mreži prenocista</li>
-      <li>SOS pozivni centar za hitne situacije</li>
-    </ul>
-  </section>
+    <!-- Usluge -->
+    <section id="services" class="section">
+        <h2>Naše usluge</h2>
+        <p>Siguran i brz transport bilo kog tereta. Pružamo različite usluge prevoza za vaš biznis i privatne potrebe.</p>
+    </section>
 
-  <section id="mapa" class="section-content">
-    <h2>Naša Mreža</h2>
-    <p>Pokrivamo celu Srbiju sa našim partnerima i uslugama</p>
-    <img src="mapa.svg" alt="Mapa Srbije sa lokacijama" class="mapa-animacija" />
-  </section>
+    <!-- Mapa -->
+    <section id="map" class="section">
+        <h2>Naša Lokacija</h2>
+        <div id="map"></div>
+    </section>
 
-  <section id="blog" class="section-content">
-    <h2>Ko smo mi</h2>
-    <p>
-      Transport Zona je mreža profesionalaca iz oblasti transporta i pomoći na putu, koja povezuje klijente i pouzdane operatere širom Srbije i šire. Naša misija je jednostavna: da obezbedimo sigurnost, brzinu i efikasnost u svakom trenutku. Bilo da vam treba prevoz, selidba, šlep služba ili mobilni mehaničar – mi smo tu. Naš SOS centar funkcioniše 24/7, a dodatno vam nudimo pristup mreži prenocista i pomoćnih usluga. Dobrodošli su svi: vozači, prevoznici, serviseri, kao i putnici.
-    </p>
-  </section>
+    <!-- Kontakt forma -->
+    <section id="contact" class="section">
+        <h2>Kontaktirajte nas</h2>
+        <form>
+            <input type="text" id="name" placeholder="Vaše ime" required>
+            <input type="email" id="email" placeholder="Vaš email" required>
+            <textarea id="message" placeholder="Vaša poruka" required></textarea>
+            <button type="submit">Pošaljite</button>
+        </form>
+    </section>
 
-  <section id="kontakt" class="section-content">
-    <h2>Kontakt</h2>
-    <p><i class="fas fa-phone"></i> 060 5060 025 | 060 4753 169</p>
-    <p><i class="fas fa-envelope"></i> transportzona@gmail.com</p>
-    <p><i class="fas fa-map-marker-alt"></i> Beograd, Srbija</p>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </section>
+    <footer>
+        <p>© 2025 Transport Zona - Sva prava zadržana.</p>
+    </footer>
 
-  <button class="scroll-to-top" id="scrollToTopBtn">⬆️</button>
+    <!-- Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

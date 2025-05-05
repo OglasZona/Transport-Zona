@@ -1,64 +1,90 @@
-// Navigacija za mobilne uređaje
+// 1. Sticky Header sa promenom boje prilikom skrolovanja
+window.onscroll = function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+    } else {
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    }
+};
+
+// 2. Animacija za otvaranje/zaključavanje navigacije na mobilnim uređajima
 const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('nav ul');
+const navMenu = document.querySelector('.navbar ul');
 
 menuToggle.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
 });
 
-// Scroll to top dugme
-const scrollToTopBtn = document.createElement('button');
-scrollToTopBtn.classList.add('scroll-to-top');
-scrollToTopBtn.innerHTML = '↑';
-document.body.appendChild(scrollToTopBtn);
-
-scrollToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+// 3. Lazy Loading Slika
+document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('loading', 'lazy');
 });
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.style.display = 'block';
-  } else {
-    scrollToTopBtn.style.display = 'none';
-  }
+// 4. Interaktivna Mapa sa markerima
+function initMap() {
+    const mapOptions = {
+        center: { lat: 44.8176, lng: 20.4633 },  // Koordinate Beograda
+        zoom: 12,
+        disableDefaultUI: true,
+        zoomControl: true,
+    };
+    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    
+    const marker = new google.maps.Marker({
+        position: { lat: 44.8176, lng: 20.4633 },
+        map: map,
+        title: 'Beograd',
+    });
+
+    const infoWindow = new google.maps.InfoWindow({
+        content: `<h3>Beograd</h3><p>Glavni grad Srbije</p>`
+    });
+
+    marker.addListener('click', function() {
+        infoWindow.open(map, marker);
+    });
+}
+
+// 5. Validacija Kontakt Forme
+const form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.querySelector('#name');
+    const email = document.querySelector('#email');
+    const message = document.querySelector('#message');
+
+    if (name.value === '' || email.value === '' || message.value === '') {
+        alert('Sva polja su obavezna!');
+        return;
+    }
+
+    if (!validateEmail(email.value)) {
+        alert('Molimo Vas unesite validan email!');
+        return;
+    }
+
+    alert('Forma je uspešno poslata!');
+    form.reset();
 });
 
-// Sekcija animacija (parallax efekat na sekcije kad se skroluje)
+// Funkcija za validaciju email-a
+function validateEmail(email) {
+    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    return re.test(String(email).toLowerCase());
+}
+
+// 6. Animacija za Prikazivanje Sekcija prilikom skrolovanja
 const sections = document.querySelectorAll('.section');
 
-window.addEventListener('scroll', () => {
-  const scrollPosition = window.scrollY + window.innerHeight;
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        }
+    });
+}, { threshold: 0.5 });
 
-  sections.forEach(section => {
-    if (section.offsetTop < scrollPosition - 200) {
-      section.classList.add('visible');
-    }
-  });
-});
-
-// Aktivacija animacija kada sekcija dođe u ekran
-document.addEventListener('DOMContentLoaded', () => {
-  sections.forEach(section => {
-    section.classList.add('hidden');
-  });
-});
-
-// Mapa - Dodaj mapu sa SVG slikom
-const mapSection = document.getElementById('map-section');
-
-if (mapSection) {
-  const mapImage = document.createElement('img');
-  mapImage.src = 'mapa.svg';
-  mapImage.alt = 'Mapa Transport Zona';
-  mapSection.appendChild(mapImage);
-}
-
-// Pomoćna funkcija za skrolovanje do sekcije
-function scrollToSection(id) {
-  const targetSection = document.getElementById(id);
-  window.scrollTo({
-    top: targetSection.offsetTop - 50,
-    behavior: 'smooth'
-  });
-}
+sections.forEach(section => observer.observe(section));
